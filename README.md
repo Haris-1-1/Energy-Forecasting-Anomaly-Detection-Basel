@@ -76,72 +76,72 @@ Für das Projekt wird ein reproduzierbares Feature-Set entwickelt, das zeitliche
 - [Data]()
 - [Link]()
 
-## 📊 Data Understanding – Stromverbauch Daten von Basel (2012–2025)
+## 📊 Data Understanding – Energieverbrauch Basel (2012–2025)
 
-### 🗂️ Dataset Overview
-- **File:** `251006_StromverbrauchBasel2012-2025.csv`  
-- **Records:** 481,959 rows  
-- **Columns:** 12  
-- **Time Range:** 2012-01-01 → 2025-09-29  
-- **Frequency:** 15-minute intervals  
+### 🗂️ Datensatzübersicht
+- **Datei:** `251006_StromverbrauchBasel2012-2025.csv`  
+- **Zeilen:** 481’959  
+- **Spalten:** 12  
+- **Zeitraum:** 01.01.2012 → 29.09.2025  
+- **Datenfrequenz:** 15-Minuten-Intervalle  
 - **Index:** `Start der Messung` (UTC, DatetimeIndex)
 
 ---
 
-### 🧩 Data Structure
-| Type | Columns |
+### 🧩 Datenstruktur
+| Typ | Spalten |
 |------|----------|
-| **Numeric** | `Stromverbrauch`, `Grundversorgte Kunden`, `Freie Kunden`, `Jahr`, `Monat`, `Tag`, `Wochentag`, `Tag des Jahres`, `Quartal`, `Woche des Jahres` |
+| **Numerisch** | `Stromverbrauch`, `Grundversorgte Kunden`, `Freie Kunden`, `Jahr`, `Monat`, `Tag`, `Wochentag`, `Tag des Jahres`, `Quartal`, `Woche des Jahres` |
 | **Text** | `Start der Messung (Text)` |
 
 ---
 
-### 🧠 Data Quality
-- ✅ **No duplicate timestamps**  
-- ⚠️ **Missing values:**
-  - `Grundversorgte Kunden`: ~62 % missing  
-  - `Freie Kunden`: ~63 % missing  
-- ✅ **Time intervals** consistent (every 15 min)  
-- ✅ **DatetimeIndex** correctly set (`UTC`)  
+### 🧠 Datenqualität
+- ✅ **Keine doppelten Zeitstempel**  
+- ⚠️ **Fehlende Werte:**
+  - `Grundversorgte Kunden`: ca. **62 %** fehlend  
+  - `Freie Kunden`: ca. **63 %** fehlend  
+- ✅ **Zeitintervalle** sind konsistent (alle 15 Minuten)  
+- ✅ **Datumsindex** korrekt gesetzt (`UTC`)  
 
 ---
 
-### 📈 Descriptive Statistics
-| Variable | Min | Max | Mean |
-|-----------|-----|-----|------|
-| Stromverbrauch (kWh) | 22 322 | 68 374 | **38 454** |
-| Grundversorgte Kunden | 0 | 26 090 | **15 788** |
-| Freie Kunden | 0 | 32 296 | **19 277** |
+### 📈 Beschreibende Statistik
+| Variable | Minimum | Maximum | Mittelwert |
+|-----------|----------|----------|-------------|
+| **Stromverbrauch (kWh)** | 22 322 | 68 374 | **38 454** |
+| **Grundversorgte Kunden** | 0 | 26 090 | **15 788** |
+| **Freie Kunden** | 0 | 32 296 | **19 277** |
 
 ---
 
-### 🔗 Correlations (top relations)
+### 🔗 Korrelationen (stärkste Zusammenhänge)
 - `Stromverbrauch` ↔ `Freie Kunden`: **0.92**  
 - `Stromverbrauch` ↔ `Grundversorgte Kunden`: **0.87**  
 - `Stromverbrauch` ↔ `Wochentag`: **–0.27**
 
-➡️ Indicates strong dependency between consumption and customer activity.
+➡️ Deutet auf eine starke Abhängigkeit zwischen Stromverbrauch und Kundenaktivität hin.
 
 ---
 
-### 🔍 Key Insights
-1. Dataset covers over **13 years** of Basel’s power consumption.  
-2. **Slight weekend and yearly seasonality** visible.  
-3. Customer segmentation (free vs. base supply) strongly affects load patterns.  
-4. Ideal for **time-series forecasting and ML model training**.  
-5. Minor missing data, but overall **high data quality**.
+### 🔍 Zentrale Erkenntnisse
+1. Der Datensatz umfasst **über 13 Jahre** Stromverbrauchsdaten für Basel.  
+2. **Saisonale und wöchentliche Muster** sind erkennbar (z. B. geringerer Verbrauch am Wochenende).  
+3. **Kundensegmente** (freie vs. grundversorgte Kunden) beeinflussen den Verbrauch deutlich.  
+4. **Datenqualität insgesamt hoch**, nur vereinzelte Lücken.  
+5. Sehr gut geeignet für **Zeitreihenanalyse** und **Machine-Learning-Prognosen**.
 
 ---
 
-### 🚀 Next Steps
-- Handle missing customer data (interpolation / imputation).  
-- Perform seasonal decomposition (trend + seasonality).  
-- Integrate weather and solar data for advanced forecasting.  
-- Prepare training dataset for **short- and mid-term energy load prediction**.
+### 🚀 Nächste Schritte
+- Fehlende Werte bei Kundendaten interpolieren oder schätzen.  
+- Saisonale und langfristige Trends weiter analysieren.  
+- Wetter- und Solardaten zur Erweiterung hinzufügen.  
+- Trainingsdaten für **Kurz- und Mittelfristprognosen** vorbereiten.
 
 ---
 
-*Generated automatically using Python (pandas + matplotlib) in the `data_analysis.py` pipeline.*
+*Erstellt automatisch mit Python (pandas, matplotlib, scikit-learn) im Skript `data_analysis.py`.*
 
 ## Data Preparation
 
