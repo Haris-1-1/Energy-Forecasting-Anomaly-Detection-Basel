@@ -141,7 +141,6 @@ Für das Projekt wird ein reproduzierbares Feature-Set entwickelt, das zeitliche
 
 ---
 
-*Erstellt automatisch mit Python (pandas, matplotlib, scikit-learn) im Skript `data_analysis.py`.*
 
 ## Data Preparation
 
